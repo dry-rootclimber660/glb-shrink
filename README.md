@@ -199,6 +199,6 @@ Ensure `DRACOLoader` is configured with `setDecoderPath('/draco/')` pointing at 
 
 ## Credits
 
-Compression pipeline adapted from the [ThreeShaders 3D model processing guide](https://github.com/boona13/ThreeShaders).
+Compression pipeline adapted from the 3D asset workflow built for **ThreeShaders** — an in-development Three.js game by [@boona13](https://github.com/boona13).
 
 Built with [Three.js](https://threejs.org), [@gltf-transform](https://gltf-transform.dev), and [meshoptimizer](https://github.com/zeux/meshoptimizer).
